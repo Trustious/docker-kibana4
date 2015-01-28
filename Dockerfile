@@ -7,3 +7,6 @@ RUN    wget -O /tmp/$KIBANA_VERSION.tar.gz https://download.elasticsearch.org/ki
     && rm /tmp/$KIBANA_VERSION.tar.gz
 
 ADD ./kibana.yml /opt/$KIBANA_VERSION/config/kibana.yml
+ADD ./run.sh /usr/bin/run.sh
+
+CMD ["/usr/bin/run.sh"]
