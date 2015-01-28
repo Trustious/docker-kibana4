@@ -1,15 +1,18 @@
 #!/bin/bash
 
 if [[ -z $KIBANA_PORT ]]; then
-  export KIBANA_PORT="5601"
+  echo "You must set the KIBANA_PORT environment variable"
+  exit 1
 fi
 
 if [[ -z $ELASTICSEARCH_HOST ]]; then
-  export ELASTICSEARCH_HOST="localhost"
+  echo "You must set the ELASTICSEARCH_HOST environment variable"
+  exit 1
 fi
 
 if [[ -z $ELASTICSEARCH_PORT ]]; then
-  export ELASTICSEARCH_PORT="9200"
+  echo "You must set the ELASTICSEARCH_PORT environment variable"
+  exit 1
 fi
 
 sed -i "/elasticsearch:/c\elasticsearch: \"http://$ELASTICSEARCH_HOST:$ELASTICSEARCH_PORT\"" /opt/$KIBANA_VERSION/config/kibana.yml
