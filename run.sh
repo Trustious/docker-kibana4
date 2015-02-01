@@ -18,4 +18,4 @@ fi
 sed -i "/elasticsearch:/c\elasticsearch: \"http://$ELASTICSEARCH_HOST:$ELASTICSEARCH_PORT\"" /opt/$KIBANA_VERSION/config/kibana.yml
 sed -i "/port:/c\port: $KIBANA_PORT" /opt/$KIBANA_VERSION/config/kibana.yml
 
-/opt/kibana4/src/server/bin/kibana.sh
+/bin/bash /opt/kibana4/src/server/bin/kibana.sh
