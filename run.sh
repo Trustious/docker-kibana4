@@ -15,7 +15,7 @@ if [[ -z $ELASTICSEARCH_PORT ]]; then
   exit 1
 fi
 
-sed -i "/elasticsearch:/c\elasticsearch: \"http://$ELASTICSEARCH_HOST:$ELASTICSEARCH_PORT\"" /opt/$KIBANA_VERSION/config/kibana.yml
-sed -i "/port:/c\port: $KIBANA_PORT" /opt/$KIBANA_VERSION/config/kibana.yml
+sed -i "/elasticsearch:/c\elasticsearch: \"http://$ELASTICSEARCH_HOST:$ELASTICSEARCH_PORT\"" /opt/kibana4/src/server/config/kibana.yml
+sed -i "/port:/c\port: $KIBANA_PORT" /opt/kibana4/src/server/config/kibana.yml
 
 /bin/bash /opt/kibana4/src/server/bin/kibana.sh
