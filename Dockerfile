@@ -1,12 +1,8 @@
 FROM java:7
 
-ENV KIBANA_VERSION kibana-4.0.0-beta3
+RUN git clone https://github.com/elasticsearch/kibana.git /opt/kibana4
 
-RUN    wget -O /tmp/$KIBANA_VERSION.tar.gz https://download.elasticsearch.org/kibana/kibana/$KIBANA_VERSION.tar.gz \
-    && tar -zxvf /tmp/$KIBANA_VERSION.tar.gz -C /opt \
-    && rm /tmp/$KIBANA_VERSION.tar.gz
-
-ADD ./kibana.yml /opt/$KIBANA_VERSION/config/kibana.yml
+ADD ./kibana.yml /opt/kibana4/src/server/config/kibana.yml
 ADD ./run.sh /usr/bin/run.sh
 RUN chmod u+x /usr/bin/run.sh
 
