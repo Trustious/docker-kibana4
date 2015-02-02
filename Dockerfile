@@ -10,7 +10,7 @@ RUN    apt-get update \
 # Cloning kibana and Installing node
 RUN    git clone https://github.com/elasticsearch/kibana.git /tmp/kibana4 \
     && wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.23.2/install.sh | bash \
-    && export NVM_DIR="/root/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm \
+    && export NVM_DIR="/root/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" \
     && nvm install 0.10 \
     && cd /tmp/kibana4 \
     && export KIBANA_VESION=`grep "version" package.json | sed 's/.*"version": "\(.*\)".*/\1/'` \
