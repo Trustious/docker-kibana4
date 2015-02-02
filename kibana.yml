@@ -29,7 +29,7 @@ shard_timeout: 30000
 verify_ssl: true
 
 # Plugins that are included in the build, and no longer found in the plugins/ folder
-bundled_plugin_module_ids:
+bundled_plugin_ids:
  - plugins/dashboard/index
  - plugins/discover/index
  - plugins/doc/index
