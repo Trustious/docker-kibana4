@@ -18,12 +18,12 @@ RUN    git clone https://github.com/elasticsearch/kibana.git /tmp/kibana4 \
     && npm install && bower --config.interactive=false install --allow-root \
     && grunt build \
     && mkdir /opt/kibana \
-    && tar -zxvf ./target/kibana-$KIBANA_VESION-linux-x64.tar.gz -C /opt/kibana --strip-components=1 \
+    && tar -zxvf ./target/kibana-$KIBANA_VESION-linux-x64.tar.gz -C /opt/kibana4 --strip-components=1 \
     && cd \
     && rm -R /tmp/kibana4
 
 
-ADD ./kibana.yml /opt/kibana4/src/server/config/kibana.yml
+ADD ./kibana.yml /opt/kibana4/config/kibana.yml
 ADD ./run.sh /usr/bin/run.sh
 RUN chmod u+x /usr/bin/run.sh
 
