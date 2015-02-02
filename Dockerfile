@@ -17,7 +17,7 @@ RUN    git clone https://github.com/elasticsearch/kibana.git /tmp/kibana4 \
     && npm install -g grunt-cli bower \
     && npm install && bower --config.interactive=false install --allow-root \
     && grunt build \
-    && mkdir /opt/kibana \
+    && mkdir /opt/kibana4 \
     && tar -zxvf ./target/kibana-$KIBANA_VESION-linux-x64.tar.gz -C /opt/kibana4 --strip-components=1 \
     && cd \
     && rm -R /tmp/kibana4
