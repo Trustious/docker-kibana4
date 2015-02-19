@@ -13,7 +13,7 @@ RUN    git clone https://github.com/elasticsearch/kibana.git /tmp/kibana4 \
     && export NVM_DIR="/root/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" \
     && nvm install 0.10 \
     && cd /tmp/kibana4 \
-    && git checkout 6ac17b0 \
+    && git checkout 65254de29b65aa4d4bb9b8441b53bfe4ff727ac3 \
     && export KIBANA_VESION=`grep "version" package.json | sed 's/.*"version": "\(.*\)".*/\1/'` \
     && npm install -g grunt-cli bower \
     && npm install && bower --config.interactive=false install --allow-root \
